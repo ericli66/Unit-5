@@ -1,6 +1,18 @@
 //Eric Li
 //Block 2-4
 
+//sound effects
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+//sound variables
+Minim minim;
+AudioPlayer theme, coin, gameover;
+
 //Mode VAriables
 int mode;
 final int INTRO = 0;
@@ -15,12 +27,15 @@ PFont font;
 //Target Variable
 float x, y, z;
 float vx, vy;
+int score, lives;
 
 //Color pallete
 
 void setup() {
   size(800, 600);
   mode = INTRO;
+  textAlign(CENTER, CENTER);
+  rectMode(CENTER);
   
   //loading font
   font = createFont("AlteHaasGroteskRegular.ttf", 200);
@@ -31,7 +46,15 @@ void setup() {
   y = height/2;
   z = 100;
   vx = random(-5, 5);
-  vy = random(-5, 5);;
+  vy = random(-5, 5);
+  score = 0;
+  lives = 3;
+  
+  //minim
+  minim = new Minim(this);
+  theme = minim.loadFile("MUSIC.mp3");
+  coin = minim.loadFile("SUCCESS.wav");
+  gameover = minim.loadFile("FAILURE.wav");
 }
 
 
