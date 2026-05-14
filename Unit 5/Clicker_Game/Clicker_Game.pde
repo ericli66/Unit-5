@@ -23,6 +23,9 @@ final int GAMEOVER =3;
 //font
 PFont font;
 
+//image
+PImage Intro;
+
 
 //Target Variable
 float x, y, z;
@@ -37,6 +40,9 @@ void setup() {
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   
+  //load image
+  Intro = loadImage("Intro.jpg");
+  Intro.resize(width, height);
   //loading font
   font = createFont("AlteHaasGroteskRegular.ttf", 200);
   

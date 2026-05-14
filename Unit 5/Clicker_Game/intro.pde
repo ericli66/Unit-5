@@ -1,6 +1,6 @@
 void intro() {
   theme.play();
-  background(250, 210, 0);
+  image(Intro, 0, 0);
   textAlign(CENTER, CENTER);
   textFont(font);
   textSize(120);
