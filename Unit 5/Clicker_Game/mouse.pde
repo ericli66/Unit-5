@@ -1,5 +1,5 @@
 void mouseReleased() {
-    if (mode == INTRO) {
+  if (mode == INTRO) {
     introClicks();
   } else if (mode == GAME) {
     gameClicks();
@@ -7,6 +7,8 @@ void mouseReleased() {
     pauseClicks();
   } else if (mode == GAMEOVER) {
     gameoverClicks();
+  } else if (mode == OPTIONS) {
+    optionsClicks();
   } else {
     println("Error: Mode = " + mode);
   }

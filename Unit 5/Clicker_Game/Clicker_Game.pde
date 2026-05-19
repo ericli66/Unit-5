@@ -19,12 +19,14 @@ final int INTRO = 0;
 final int GAME = 1;
 final int PAUSE = 2;
 final int GAMEOVER =3;
+final int OPTIONS = 4;
 
 //font
 PFont font;
 
 //image
 PImage Intro;
+PImage banana;
 
 
 //Target Variable
@@ -39,15 +41,20 @@ void setup() {
   mode = INTRO;
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
-  
-  //load image
+
+  //load backgound
   Intro = loadImage("Intro.jpg");
   Intro.resize(width, height);
+  
+  //load fruit
+  banana = loadImage("banana.png");
+  banana.resize(100, 100);
+  
   //loading font
   font = createFont("AlteHaasGroteskRegular.ttf", 200);
-  
+
   //target setup
-  
+
   x = width/2;
   y = height/2;
   z = 100;
@@ -55,7 +62,7 @@ void setup() {
   vy = random(-5, 5);
   score = 0;
   lives = 3;
-  
+
   //minim
   minim = new Minim(this);
   theme = minim.loadFile("MUSIC.mp3");
@@ -73,6 +80,8 @@ void draw() {
     pause();
   } else if (mode == GAMEOVER) {
     gameover();
+  } else if (mode== OPTIONS) {
+    options();
   } else {
     println("Error: Mode = " + mode);
   }

@@ -38,6 +38,8 @@ void gameClicks() {
     score = score + 1;
     coin.rewind();
     coin.play();
+    vx = vx * 1.1;
+    vy = vy * 1.1;
   } else if ( dist(mouseX, mouseY, 50, 50) < 40) {
     mode = PAUSE;
   } else {
