@@ -22,7 +22,7 @@ void game () {
   fill(255);
   stroke(0);
   strokeWeight(5);
-  circle(x, y, z);
+  image(selectedFruit, x, y, fruitSize, fruitSize);
 
   //moving
   x = x +vx;

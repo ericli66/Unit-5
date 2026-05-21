@@ -34,4 +34,7 @@ void introClicks() {
   if (mouseX  > 300 && mouseX < 500 && mouseY > 350 && mouseY < 450) {
     mode = GAME;
   }
+  if (mouseX  > 300 && mouseX < 500 && mouseY > 450 && mouseY < 550) {
+    mode = OPTIONS;
+  }
 }

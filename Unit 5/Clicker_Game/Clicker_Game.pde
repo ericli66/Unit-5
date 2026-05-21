@@ -27,12 +27,17 @@ PFont font;
 //image
 PImage Intro;
 PImage banana;
+PImage apple;
+PImage orange;
+PImage selectedFruit;
 
 
 //Target Variable
 float x, y, z;
 float vx, vy;
 int score, lives;
+float sliderX = 400;
+float fruitSize = 100;
 
 //Color pallete
 
@@ -48,7 +53,9 @@ void setup() {
   
   //load fruit
   banana = loadImage("banana.png");
-  banana.resize(100, 100);
+  apple = loadImage("apple.png");
+  orange = loadImage("orange.jpg");
+  
   
   //loading font
   font = createFont("AlteHaasGroteskRegular.ttf", 200);
