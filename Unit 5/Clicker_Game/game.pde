@@ -1,5 +1,6 @@
 void game () {
-  background(0, 0, 255);
+  //background image
+  image(Intro, width/2, height/2);
 
   //paly music
   theme.play();
@@ -29,12 +30,12 @@ void game () {
   y = y + vy;
 
   //bouncing
-  if (x < z/2 || x > width-z/2) vx = vx * -1;
-  if (y < z/2 || y > height-z/2) vy = vy * -1;
+  if (x < fruitSize/2 || x > width-fruitSize/2) vx = vx * -1;
+  if (y < fruitSize/2 || y > height-fruitSize/2) vy = vy * -1;
 }
 
 void gameClicks() {
-  if ( dist(mouseX, mouseY, x, y) < 50) {
+  if ( dist(mouseX, mouseY, x, y) < fruitSize/2) {
     score = score + 1;
     coin.rewind();
     coin.play();

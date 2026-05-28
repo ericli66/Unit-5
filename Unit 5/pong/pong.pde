@@ -14,6 +14,7 @@ float leftX, leftY, leftD, rightX, rightY, rightD; //paddles
 float ballX, ballY, ballD; //ball
 float vx, vy;
 int leftScore, rightScore, timer;
+boolean AI;
 
 //keyboard variables
 boolean wkey, skey, upkey, downkey;
@@ -22,28 +23,31 @@ boolean wkey, skey, upkey, downkey;
 
 void setup() {
   size(800, 600);
-  mode = GAME;
+  mode = INTRO;
+
+  rectMode(CENTER);
+  textAlign(CENTER, CENTER);
 
   leftX = 0;
   leftY = height/2;
-  leftD = 200;
+  leftD = 150;
   rightX = width;
   rightY = height/2;
-  rightD = 200;
+  rightD = 150;
 
   ballX = width/2;
   ballY = height/2;
-  ballD = 100;
-  
-  vx = 5;
-  vy = 5;
-  
+  ballD = 75;
+
+  resetGame();
+
   //intialize keyboard vars
   wkey = skey = upkey = downkey = false;
 }
 
 void draw() {
   if (mode == INTRO) {
+    intro();
   } else if (mode == GAME) {
     game();
   } else if (mode == PAUSE) {

@@ -33,11 +33,12 @@ PImage selectedFruit;
 
 
 //Target Variable
-float x, y, z;
+float x, y;
 float vx, vy;
 int score, lives;
 float sliderX = 400;
 float fruitSize = 100;
+int highScore;
 
 //Color pallete
 
@@ -46,17 +47,18 @@ void setup() {
   mode = INTRO;
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
+  imageMode(CENTER);
 
   //load backgound
   Intro = loadImage("Intro.jpg");
   Intro.resize(width, height);
-  
+
   //load fruit
   banana = loadImage("banana.png");
   apple = loadImage("apple.png");
   orange = loadImage("orange.jpg");
-  
-  
+  selectedFruit = loadImage("banana.png");
+
   //loading font
   font = createFont("AlteHaasGroteskRegular.ttf", 200);
 
@@ -64,7 +66,6 @@ void setup() {
 
   x = width/2;
   y = height/2;
-  z = 100;
   vx = random(-5, 5);
   vy = random(-5, 5);
   score = 0;

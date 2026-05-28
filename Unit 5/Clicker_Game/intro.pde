@@ -1,40 +1,44 @@
 void intro() {
+  //intro
   theme.play();
-  image(Intro, 0, 0);
-  textAlign(CENTER, CENTER);
+
+  //background image
+  image(Intro, width/2, height/2);
+
+  //title
   textFont(font);
   textSize(120);
-  fill(250, 180, 5);
+  fill(0);
   text("Fruit Clicker", 400, 150);
 
-  if (mouseX  > 300 && mouseX < 500 && mouseY > 350 && mouseY < 450) {
-    strokeWeight(10);
-  } else {
-    strokeWeight(1);
-  }
-  fill(255);
-  rect(400, 400, 200, 100);
-  fill(0);
-  textSize(60);
-  text("Start", 400, 400);
-
-  if (mouseX  > 300 && mouseX < 500 && mouseY > 450 && mouseY < 550) {
-    strokeWeight(10);
-  } else {
-    strokeWeight(1);
-  }
-  fill(255);
-  rect(400, 500, 200, 100);
-  fill(0);
-  textSize(60);
-  text("Options", 400, 500);
+  // Buttons
+  drawButton(250, 400, 250, 100, "Start");
+  drawButton(550, 400, 250, 100, "Options");
 }
 
 void introClicks() {
-  if (mouseX  > 300 && mouseX < 500 && mouseY > 350 && mouseY < 450) {
+  if (mouseX  > 125 && mouseX < 375 && mouseY > 400 && mouseY < 500) {
     mode = GAME;
   }
-  if (mouseX  > 300 && mouseX < 500 && mouseY > 450 && mouseY < 550) {
+  if (mouseX  > 425 && mouseX < 675 && mouseY > 400 && mouseY < 500) {
     mode = OPTIONS;
   }
+}
+
+void drawButton(int x, int y, int w, int h, String label) {
+
+  // Check if mouse is over button
+  if (mouseX > x - w/2 && mouseX < x + w/2 &&
+    mouseY > y - h/2 && mouseY < y + h/2) {
+    strokeWeight(10);
+  } else {
+    strokeWeight(1);
+  }
+
+  fill(0,0,0,100);
+  rect(x, y, w, h);
+
+  fill(0);
+  textSize(60);
+  text(label, x, y);
 }
