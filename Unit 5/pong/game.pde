@@ -1,5 +1,13 @@
 void game () {
   background(0);
+  
+    //pause button
+  noStroke();
+  fill(255);
+  circle(400, 50, 80);
+  fill(0);
+  rect(385, 50, 10, 50);
+  rect(415, 50, 10, 50);
 
   //paddle
   fill(255);
@@ -9,12 +17,7 @@ void game () {
   //ball
   circle(ballX, ballY, ballD);
 
-  //scoreboard
-  textSize(50);
-  fill(255, 0, 0);
-  text(leftScore, width/4, 100);
-  fill(0, 0, 255);
-  text(rightScore, 3*width/4, 100);
+
 
   //move paddles
   if (wkey == true) leftY = leftY - 5;
@@ -73,6 +76,8 @@ void game () {
       resetGame();
     }
 
+
+
     //bouncing
     if (ballY < ballD/2) {
       ballY = ballD/2;
@@ -100,9 +105,18 @@ void game () {
       mode = GAMEOVER;
     }
   }
+  //scoreboard
+  textSize(50);
+  fill(255, 0, 0);
+  text(leftScore, width/4, 100);
+  fill(0, 0, 255);
+  text(rightScore, 3*width/4, 100);
 }
 
 void gameClicks() {
+  if ( dist(mouseX, mouseY, 400, 50) < 40) {
+    mode = PAUSE;
+  }
 }
 
 void resetGame() {
