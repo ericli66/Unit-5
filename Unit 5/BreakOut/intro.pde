@@ -35,7 +35,7 @@ void intro() {
 
 void introClicks() {
   // If the user clicks inside that exact same button box...
-  if (mouseX > 300 && mouseX < 450 && mouseY > 350 && mouseY < 450) {
+  if (mouseX > 300 && mouseX < 500 && mouseY > 350 && mouseY < 450) {
     mode = GAME;
   }
 }

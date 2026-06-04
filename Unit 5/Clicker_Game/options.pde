@@ -38,13 +38,12 @@ void options() {
   }
   fruitSize = map(sliderX, 300, 500, 40, 200);
 
-  // --- THE VISUAL PREVIEW ---
-  // This shows the fruit growing/shrinking based on the slider
+  // fruit growing/shrinking based on the slider
   image(selectedFruit, 400, 440, fruitSize, fruitSize);
 
   // --- BACK BUTTON ---
   textSize(30);
-  drawButton(400, 570, 200, 50, "Back");
+  drawButton(400, 550, 200, 50, 40, "Back");
 }
 
 void optionsClicks() {

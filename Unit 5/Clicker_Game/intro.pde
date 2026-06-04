@@ -12,20 +12,23 @@ void intro() {
   text("Fruit Clicker", 400, 150);
 
   // Buttons
-  drawButton(250, 400, 250, 100, "Start");
-  drawButton(550, 400, 250, 100, "Options");
+  drawButton(250, 400, 250, 100, 60, "Start");
+  drawButton(550, 400, 250, 100, 60,"Options");
 }
 
 void introClicks() {
-  if (mouseX  > 125 && mouseX < 375 && mouseY > 400 && mouseY < 500) {
+  // Start Button (X: 125 to 375, Y: 350 to 450)
+  if (mouseX > 125 && mouseX < 375 && mouseY > 350 && mouseY < 450) {
     mode = GAME;
   }
-  if (mouseX  > 425 && mouseX < 675 && mouseY > 400 && mouseY < 500) {
+  
+  // Options Button (X: 425 to 675, Y: 350 to 450)
+  if (mouseX > 425 && mouseX < 675 && mouseY > 350 && mouseY < 450) {
     mode = OPTIONS;
   }
 }
 
-void drawButton(int x, int y, int w, int h, String label) {
+void drawButton(int x, int y, int w, int h, int s, String label) {
 
   // Check if mouse is over button
   if (mouseX > x - w/2 && mouseX < x + w/2 &&
@@ -39,6 +42,6 @@ void drawButton(int x, int y, int w, int h, String label) {
   rect(x, y, w, h);
 
   fill(0);
-  textSize(60);
+  textSize(s);
   text(label, x, y);
 }

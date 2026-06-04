@@ -22,6 +22,8 @@ boolean akey, dkey;
 //Brick Variables;
 int[] x;//declaration
 int[] y;
+int n;
+int brickD = 50;
 
 
 
@@ -47,8 +49,21 @@ void setup() {
   akey = dkey = false;
 
   //set up array, instantiation
-  x = new int[3];
-  y = new int[3];
+  n = 4;
+  x = new int[n];
+  y = new int[n];
+
+  x[0] = 100;
+  y[0] = 100;
+
+  x[1] = 400;
+  y[1] = 100;
+
+  x[2] = 700;
+  y[2] = 100;
+
+  x[3] = 100;
+  y[3] = 200;
 }
 
 void draw() {

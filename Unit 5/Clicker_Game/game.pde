@@ -35,7 +35,7 @@ void game () {
 }
 
 void gameClicks() {
-  if ( dist(mouseX, mouseY, x, y) < fruitSize/2) {
+  if ( dist(mouseX, mouseY, x, y) < fruitSize/2+20) {
     score = score + 1;
     coin.rewind();
     coin.play();
@@ -47,6 +47,13 @@ void gameClicks() {
     lives = lives - 1;
     gameover.rewind();
     gameover.play();
-    if (lives == 0) mode = GAMEOVER;
+    
+    if (lives == 0) {
+      // Check for a new high score before going to gameover
+      if (score > highScore) {
+        highScore = score;
+      }
+      mode = GAMEOVER;
+    }
   }
 }

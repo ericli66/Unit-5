@@ -56,7 +56,7 @@ void setup() {
   //load fruit
   banana = loadImage("banana.png");
   apple = loadImage("apple.png");
-  orange = loadImage("orange.jpg");
+  orange = loadImage("orange.png");
   selectedFruit = loadImage("banana.png");
 
   //loading font
