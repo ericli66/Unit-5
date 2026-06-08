@@ -2,9 +2,9 @@ void pause() {
   //resume button
   noStroke();
   fill(255);
-  circle(400, 50, 80);
+  circle(400, 50, 60);
   fill(0);
-  triangle(385, 25, 425, 50, 385, 75);
+  triangle(390, 30, 420, 50, 390, 70);
 
 }
 

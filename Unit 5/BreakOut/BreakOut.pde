@@ -22,26 +22,34 @@ boolean akey, dkey;
 //Brick Variables;
 int[] x;//declaration
 int[] y;
+boolean[] alive;
 int n;
-int brickD = 50;
+int brickD;
+int tempX, tempY;
 
+//colors
+color purple = #483C46;
+color teal = #3c6e71;
+color green = #70ae6e;
+color greenYellow = #beee62;
+color orange = #f4743b;
 
 
 void setup() {
-  size(800, 600);
+  size(800, 800);
   mode = INTRO;
 
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
 
   //setup baddles
-  paddleX = 400;
-  paddleY = 600;
-  paddleD = 200;
+  paddleX = width/2;
+  paddleY = height;
+  paddleD = 150;
 
   ballX = width/2;
-  ballY = height/2;
-  ballD = 15;
+  ballY = 3*height/4;
+  ballD = 10;
 
   vx = 0;
   vy = 2;
@@ -49,21 +57,26 @@ void setup() {
   akey = dkey = false;
 
   //set up array, instantiation
-  n = 4;
+  brickD = 50;
+  n = 28;
   x = new int[n];
   y = new int[n];
+  alive = new boolean[n];
+  tempX = 100;
+  tempY = 100;
 
-  x[0] = 100;
-  y[0] = 100;
-
-  x[1] = 400;
-  y[1] = 100;
-
-  x[2] = 700;
-  y[2] = 100;
-
-  x[3] = 100;
-  y[3] = 200;
+  int i = 0;
+  while ( i < n) {
+    x[i] = tempX;
+    y[i] = tempY;
+    alive[i] = true;
+    tempX = tempX +100;
+    if (tempX == width) {
+      tempX =100;
+      tempY = tempY + 100;
+    }
+    i++;
+  }
 }
 
 void draw() {

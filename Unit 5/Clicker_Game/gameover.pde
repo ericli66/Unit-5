@@ -7,7 +7,7 @@ void gameover() {
   gameover.play();
 
   //text display
-  fill(255);
+  fill(0);
   textSize(60);
   text("Game Over", width/2, height/2 - 50);
   

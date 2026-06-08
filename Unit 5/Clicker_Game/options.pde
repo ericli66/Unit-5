@@ -57,7 +57,7 @@ void optionsClicks() {
   if (dist(mouseX, mouseY, 550, 200) < 50) selectedFruit = orange;
 
   // Back Button
-  if (mouseX > 300 && mouseX < 500 && mouseY > 550 && mouseY < 590) {
+  if (mouseX > 300 && mouseX < 500 && mouseY > 525 && mouseY < 575) {
     mode = INTRO;
   }
 }

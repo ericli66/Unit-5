@@ -1,20 +1,22 @@
 void game () {
-  background(0);
-  
-    //pause button
+  background(purple);
+
+  //pause button
   noStroke();
   fill(255);
-  circle(400, 50, 80);
+  circle(400, 50, 60);
   fill(0);
-  rect(385, 50, 10, 50);
-  rect(415, 50, 10, 50);
+  rect(390, 50, 10, 40);
+  rect(410, 50, 10, 40);
 
   //paddle
-  fill(255);
+  fill(orange);
   circle(leftX, leftY, leftD);
+  fill(teal);
   circle(rightX, rightY, rightD);
 
   //ball
+  fill(greenYellow);
   circle(ballX, ballY, ballD);
 
 
@@ -107,19 +109,25 @@ void game () {
   }
   //scoreboard
   textSize(50);
-  fill(255, 0, 0);
+  fill(orange);
   text(leftScore, width/4, 100);
-  fill(0, 0, 255);
+  fill(teal);
   text(rightScore, 3*width/4, 100);
 }
 
 void gameClicks() {
-  if ( dist(mouseX, mouseY, 400, 50) < 40) {
+  if ( dist(mouseX, mouseY, 400, 50) < 30) {
     mode = PAUSE;
   }
 }
 
 void resetGame() {
+  leftX = 0;
+  leftY = height/2;
+  leftD = 150;
+  rightX = width;
+  rightY = height/2;
+  rightD = 150;
   ballX = width/2;
   ballY = height/2;
   // Randomize vy

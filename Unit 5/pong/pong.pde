@@ -19,6 +19,13 @@ boolean AI;
 //keyboard variables
 boolean wkey, skey, upkey, downkey;
 
+//colors
+color purple = #483C46;
+color teal = #3c6e71;
+color green = #70ae6e;
+color greenYellow = #beee62;
+color orange = #f4743b;
+
 
 
 void setup() {

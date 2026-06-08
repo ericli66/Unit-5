@@ -35,7 +35,7 @@ void game () {
 }
 
 void gameClicks() {
-  if ( dist(mouseX, mouseY, x, y) < fruitSize/2+20) {
+  if ( dist(mouseX, mouseY, x, y) < fruitSize/2+25) {
     score = score + 1;
     coin.rewind();
     coin.play();

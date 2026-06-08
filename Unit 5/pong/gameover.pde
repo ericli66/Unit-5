@@ -2,10 +2,10 @@ void gameover() {
   textSize(60);
 
   if (leftScore > rightScore) {
-    fill(255, 0, 0); // Red
+    fill(orange); // Red
     text("LEFT SIDE WINS!", width/2, height/2-50);
   } else {
-    fill(0, 0, 255); // Blue
+    fill(teal); // Blue
     text("RIGHT SIDE WINS!", width/2, height/2-50);
   }
 
@@ -13,6 +13,9 @@ void gameover() {
   fill(255);
   textSize(20);
   text("Click anywhere to restart", width/2, height/2 + 100);
+  
+  //reset game
+  resetGame();
 }
 
 void gameoverClicks() {
