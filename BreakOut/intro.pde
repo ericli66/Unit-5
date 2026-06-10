@@ -1,4 +1,7 @@
 void intro() {
+    //intro
+  theme.play();
+  
   //animated gif
   image(gif[f], 0, 0, width, height);
   f++;
@@ -22,7 +25,7 @@ void intro() {
   
   fill(255);
   textSize(40);
-  text("click to start", width/2, 700);
+  text("Click anywhere to start", width/2, 700);
 }
 void introClicks() {
   // If the user clicks inside that exact same button box...

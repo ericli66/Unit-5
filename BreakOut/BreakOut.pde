@@ -2,6 +2,30 @@
 //2-4
 //June 3, 2026
 
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+//ERic Li
+//2-4
+//May 14, 2026
+
+//sound effects
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+//sound variables
+Minim minim;
+AudioPlayer theme, scored, gameover, bounce;
+
+
 //modeFramework
 int mode;
 final int INTRO = 1;
@@ -40,7 +64,7 @@ int numberOfFrames;
 int f=0;
 
 //scoring
-int score = 0;
+int score = 27;
 int lives = 3;
 
 
@@ -85,6 +109,13 @@ void setup() {
       tempY = tempY + 100;
     }
     i++;
+
+    //minim
+    minim = new Minim(this);
+    theme = minim.loadFile("MUSIC.mp3");
+    scored = minim.loadFile("SUCCESS.wav");
+    gameover = minim.loadFile("FAILURE.wav");
+    bounce = minim. loadFile("BOUNCE.wav");
   }
 
   numberOfFrames = 90;
