@@ -1,6 +1,9 @@
 void intro() {
   background(purple);
 
+  //intro
+  theme.play();
+
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
 
@@ -51,4 +54,8 @@ void drawButton(float x, float y, float w, float h, String label, color buttonCo
   fill(255);
   textSize(25);
   text(label, x, y);
+
+  //reset score
+  leftScore = 0;
+  rightScore = 0;
 }

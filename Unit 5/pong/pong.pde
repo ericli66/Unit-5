@@ -1,6 +1,25 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 //ERic Li
 //2-4
 //May 14, 2026
+
+//sound effects
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+//sound variables
+Minim minim;
+AudioPlayer theme, score, gameover, bounce;
 
 //modeFramework
 int mode;
@@ -50,6 +69,13 @@ void setup() {
 
   //intialize keyboard vars
   wkey = skey = upkey = downkey = false;
+  
+    //minim
+  minim = new Minim(this);
+  theme = minim.loadFile("MUSIC.mp3");
+  score = minim.loadFile("SUCCESS.wav");
+  gameover = minim.loadFile("FAILURE.wav");
+  bounce = minim. loadFile("BOUNCE.wav");
 }
 
 void draw() {

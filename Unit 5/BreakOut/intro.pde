@@ -1,5 +1,11 @@
 void intro() {
-  background(100); 
+    //intro
+  theme.play();
+  
+  //animated gif
+  image(gif[f], 0, 0, width, height);
+  f++;
+  if (f == numberOfFrames) f = 0;
   
   if (growing) {
     titleSize = titleSize + 2;
@@ -16,26 +22,12 @@ void intro() {
   textSize(titleSize);
   fill(255);
   text("BREAKOUT", width / 2, 150);
-
-  if (mouseX > 300 && mouseX < 500 && mouseY > 350 && mouseY < 450) {
-    strokeWeight(10);
-    
-  } else {
-    strokeWeight(1);
-  }
   
-  // Draw the button box 
-  rect(400, 400, 200, 100); 
-  
-  // Draw the button text
-  fill(0);
-  textSize(24);
-  text("START", 400, 400);
+  fill(255);
+  textSize(40);
+  text("Click anywhere to start", width/2, 700);
 }
-
 void introClicks() {
   // If the user clicks inside that exact same button box...
-  if (mouseX > 300 && mouseX < 500 && mouseY > 350 && mouseY < 450) {
-    mode = GAME;
-  }
+  mode = GAME;
 }

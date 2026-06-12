@@ -13,11 +13,12 @@ void gameover() {
   fill(255);
   textSize(20);
   text("Click anywhere to restart", width/2, height/2 + 100);
-  
+
   //reset game
   resetGame();
 }
 
 void gameoverClicks() {
   mode = INTRO;
+  theme.rewind();
 }

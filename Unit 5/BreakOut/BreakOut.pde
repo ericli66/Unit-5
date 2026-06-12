@@ -2,6 +2,30 @@
 //2-4
 //June 3, 2026
 
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+//ERic Li
+//2-4
+//May 14, 2026
+
+//sound effects
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+//sound variables
+Minim minim;
+AudioPlayer theme, scored, gameover, bounce;
+
+
 //modeFramework
 int mode;
 final int INTRO = 1;
@@ -33,6 +57,15 @@ color teal = #3c6e71;
 color green = #70ae6e;
 color greenYellow = #beee62;
 color orange = #f4743b;
+
+//animated gif
+PImage[] gif;
+int numberOfFrames;
+int f=0;
+
+//scoring
+int score = 27;
+int lives = 3;
 
 
 void setup() {
@@ -76,6 +109,22 @@ void setup() {
       tempY = tempY + 100;
     }
     i++;
+
+    //minim
+    minim = new Minim(this);
+    theme = minim.loadFile("MUSIC.mp3");
+    scored = minim.loadFile("SUCCESS.wav");
+    gameover = minim.loadFile("FAILURE.wav");
+    bounce = minim. loadFile("BOUNCE.wav");
+  }
+
+  numberOfFrames = 40;
+  gif = new PImage[numberOfFrames];
+
+  int h = 0;
+  while ( h < numberOfFrames) {
+    gif[h] = loadImage("frame_" + h + "_delay-0.04s.gif");
+    h++;
   }
 }
 

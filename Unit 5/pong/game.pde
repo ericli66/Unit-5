@@ -1,8 +1,10 @@
 void game () {
   background(purple);
+  
+    //pause music
+  theme.pause();
 
   //pause button
-  noStroke();
   fill(255);
   circle(400, 50, 60);
   fill(0);
@@ -69,11 +71,15 @@ void game () {
 
     //scoring
     if (ballX < 1) {
+      score.rewind();
+      score.play();
       rightScore++;
       resetGame(); // Call a helper function to reset positions
     }
 
     if (ballX > width-1) {
+      score.rewind();
+      score.play();
       leftScore++;
       resetGame();
     }
@@ -95,15 +101,21 @@ void game () {
     if (dist(leftX, leftY, ballX, ballY) <= leftD/2 + ballD/2) {
       vx = (ballX - leftX)/10;
       vy = (ballY - leftY)/10;
+      bounce.rewind();
+      bounce.play();
     }
 
     //bouncing off right paddle
     if (dist(rightX, rightY, ballX, ballY) <= rightD/2 + ballD/2) {
       vx = (ballX - rightX)/10;
       vy = (ballY - rightY)/10;
+      bounce.rewind();
+      bounce.play();
     }
 
     if (leftScore == 3 || rightScore == 3) {
+      gameover.rewind();
+      gameover.play();
       mode = GAMEOVER;
     }
   }
@@ -122,12 +134,12 @@ void gameClicks() {
 }
 
 void resetGame() {
+  //reset paddle
   leftX = 0;
   leftY = height/2;
-  leftD = 150;
   rightX = width;
   rightY = height/2;
-  rightD = 150;
+  //reset ball
   ballX = width/2;
   ballY = height/2;
   // Randomize vy
